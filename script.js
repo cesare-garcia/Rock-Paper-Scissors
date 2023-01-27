@@ -1,42 +1,4 @@
-console.log(game(playRound));
-
-function game(gameRound) {
-
-    let playerWins = 0;
-    let computerWins = 0;
-    let gameTies = 0;
-    let playerWin_message = "Congratulations! You won the series!";
-    let computerWin_message = "Oh no, you lost the series...";
-    let tie_message = "You tied! Refresh the browser to play another series.";
-
-    for ( let i = 1; i <= 5; i++ ) {
-        let gameOutcome = gameRound();
-        console.log(gameOutcome);
-        if ( gameOutcome == `You win! ROCK beats SCISSORS.`  ) {
-            playerWins += 1;
-        } else if ( gameOutcome == `You win! PAPER beats ROCK.` ) {
-            playerWins += 1;
-        } else if ( gameOutcome == `You win! SCISSORS beats PAPER.` ) {
-            playerWins += 1;
-        } else if ( gameOutcome == `You lose! PAPER beats ROCK.` ) {
-            computerWins += 1;
-        } else if ( gameOutcome == `You lose! SCISSORS beats PAPER.` ) {
-            computerWins += 1;
-        } else if ( gameOutcome == `You lose! ROCK beats SCISSORS.` ) {
-            computerWins += 1;
-        } else { 
-            gameTies += 1;
-        }
-    }
-
-    if ( playerWins > computerWins ) {
-        return playerWin_message;
-    } else if ( computerWins > playerWins ) {
-        return computerWin_message;
-    } else {
-        return tie_message;
-    };
-}
+playRound();
 
 function playRound() {
 
@@ -104,3 +66,43 @@ function getComputerChoice() {
     }
     return computerPlay;
 }
+
+//--------------------------------------Automated 5 round RPS Game---------------
+
+// function game(gameRound) {
+
+//     let playerWins = 0;
+//     let computerWins = 0;
+//     let gameTies = 0;
+//     let playerWin_message = "Congratulations! You won the series!";
+//     let computerWin_message = "Oh no, you lost the series...";
+//     let tie_message = "You tied! Refresh the browser to play another series.";
+
+//     for ( let i = 1; i <= 5; i++ ) {
+//         let gameOutcome = gameRound();
+//         console.log(gameOutcome);
+//         if ( gameOutcome == `You win! ROCK beats SCISSORS.`  ) {
+//             playerWins += 1;
+//         } else if ( gameOutcome == `You win! PAPER beats ROCK.` ) {
+//             playerWins += 1;
+//         } else if ( gameOutcome == `You win! SCISSORS beats PAPER.` ) {
+//             playerWins += 1;
+//         } else if ( gameOutcome == `You lose! PAPER beats ROCK.` ) {
+//             computerWins += 1;
+//         } else if ( gameOutcome == `You lose! SCISSORS beats PAPER.` ) {
+//             computerWins += 1;
+//         } else if ( gameOutcome == `You lose! ROCK beats SCISSORS.` ) {
+//             computerWins += 1;
+//         } else { 
+//             gameTies += 1;
+//         }
+//     }
+
+//     if ( playerWins > computerWins ) {
+//         return playerWin_message;
+//     } else if ( computerWins > playerWins ) {
+//         return computerWin_message;
+//     } else {
+//         return tie_message;
+//     };
+// }
