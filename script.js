@@ -5,21 +5,24 @@ let scissorsChosen = document.querySelector('#scissors');
 
 
 rockChosen.addEventListener('click', (e) => {
-    let playerPlay = e.target.innerHTML.trim().toUpperCase();
-    console.log(playerPlay);
+    let playerChoice = e.target.innerHTML.trim().toUpperCase();
+    let roundOutcome = playRound(playerChoice);
+    console.log(roundOutcome);
 });
 
 paperChosen.addEventListener('click', (e) => {
-    let playerPlay = e.target.innerHTML.trim().toUpperCase();
-    console.log(playerPlay);
+    let playerChoice = e.target.innerHTML.trim().toUpperCase();
+    let roundOutcome = playRound(playerChoice);
+    console.log(roundOutcome);
 });
 
 scissorsChosen.addEventListener('click', (e) => {
-    let playerPlay = e.target.innerHTML.trim().toUpperCase();
-    console.log(playerPlay);
+    let playerChoice = e.target.innerHTML.trim().toUpperCase();
+    let roundOutcome = playRound(playerChoice);
+    console.log(roundOutcome);
 });
 
-function playRound() {
+function playRound(playerPlay) {
 
     let rivalPlay = getComputerChoice();
     // let playerPlay = prompt('Please choose Rock, Paper, or Scissors.').trim().toUpperCase();
