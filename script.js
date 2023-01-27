@@ -1,9 +1,28 @@
-playRound();
+
+let rockChosen = document.querySelector('#rock');
+let paperChosen = document.querySelector('#paper');
+let scissorsChosen = document.querySelector('#scissors');
+
+
+rockChosen.addEventListener('click', (e) => {
+    let playerPlay = e.target.innerHTML.trim().toUpperCase();
+    console.log(playerPlay);
+});
+
+paperChosen.addEventListener('click', (e) => {
+    let playerPlay = e.target.innerHTML.trim().toUpperCase();
+    console.log(playerPlay);
+});
+
+scissorsChosen.addEventListener('click', (e) => {
+    let playerPlay = e.target.innerHTML.trim().toUpperCase();
+    console.log(playerPlay);
+});
 
 function playRound() {
 
     let rivalPlay = getComputerChoice();
-    let playerPlay = prompt('Please choose Rock, Paper, or Scissors.').trim().toUpperCase();
+    // let playerPlay = prompt('Please choose Rock, Paper, or Scissors.').trim().toUpperCase();
     let outcomeText;
 
     if ( playerPlay == 'ROCK' && rivalPlay == 'SCISSORS' ) {
