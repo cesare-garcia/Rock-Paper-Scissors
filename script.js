@@ -1,26 +1,42 @@
-
 let rockChosen = document.querySelector('#rock');
 let paperChosen = document.querySelector('#paper');
 let scissorsChosen = document.querySelector('#scissors');
 
-
 rockChosen.addEventListener('click', (e) => {
-    let playerChoice = e.target.innerHTML.trim().toUpperCase();
-    let roundOutcome = playRound(playerChoice);
-    console.log(roundOutcome);
+    displayResult(e.target);
 });
 
 paperChosen.addEventListener('click', (e) => {
-    let playerChoice = e.target.innerHTML.trim().toUpperCase();
-    let roundOutcome = playRound(playerChoice);
-    console.log(roundOutcome);
+    displayResult(e.target);
 });
 
 scissorsChosen.addEventListener('click', (e) => {
-    let playerChoice = e.target.innerHTML.trim().toUpperCase();
-    let roundOutcome = playRound(playerChoice);
-    console.log(roundOutcome);
+    displayResult(e.target);
 });
+
+function displayResult(event) {
+
+    let resultNode = document.querySelector('.result');
+    let previousNode = document.querySelector('.result-one');
+
+    if ( resultNode.children.length > 0 ) {
+        resultNode.removeChild(previousNode);
+        let playerChoice = event.innerHTML.trim().toUpperCase();
+        let roundOutcome = playRound(playerChoice)
+        let resultText = document.createElement('p');
+        resultText.classList.add('result-one');
+        resultText.textContent = roundOutcome;
+        resultNode.appendChild(resultText);
+
+    } else {
+        let playerChoice = event.innerHTML.trim().toUpperCase();
+        let roundOutcome = playRound(playerChoice)
+        let resultText = document.createElement('p');
+        resultText.classList.add('result-one');
+        resultText.textContent = roundOutcome;
+        resultNode.appendChild(resultText);
+    }
+};
 
 function playRound(playerPlay) {
 
@@ -73,7 +89,7 @@ function playRound(playerPlay) {
         outcomeText = `It's a tie!`;
         return outcomeText;
     }
-}
+};
 
 function getComputerChoice() {
     let computerPlay;
@@ -87,7 +103,7 @@ function getComputerChoice() {
         computerPlay = 'SCISSORS';
     }
     return computerPlay;
-}
+};
 
 //--------------------------------------Automated 5 round RPS Game---------------
 
