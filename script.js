@@ -33,57 +33,47 @@ function displayResult(event) {
 function playRound(playerPlay) {
 
     let rivalPlay = getComputerChoice();
-    // let playerPlay = prompt('Please choose Rock, Paper, or Scissors.').trim().toUpperCase();
     let outcomeText;
 
     if ( playerPlay == 'ROCK' && rivalPlay == 'SCISSORS' ) {
-        // console.log(`Player chose ${playerPlay}. Computer chose ${rivalPlay}.`);
         outcomeText = `Player chose ROCK. Computer chose SCISSORS.
                        You win! ROCK beats SCISSORS.`;
         return outcomeText;
 
     } else if ( playerPlay == 'ROCK' && rivalPlay == 'PAPER' ) {
-        // console.log(`Player chose ${playerPlay}. Computer chose ${rivalPlay}.`);
         outcomeText = `Player chose ROCK. Computer chose PAPER.
                        You lose! PAPER beats ROCK.`;
         return outcomeText;
 
     } else if ( playerPlay == 'ROCK' && rivalPlay == 'ROCK' ) {
-        // console.log(`Player chose ${playerPlay}. Computer chose ${rivalPlay}.`);
         outcomeText = `Both players chose ROCK. It's a tie!`;
         return outcomeText;
 
     } else if ( playerPlay == 'PAPER' && rivalPlay == 'ROCK' ) {
-        // console.log(`Player chose ${playerPlay}. Computer chose ${rivalPlay}.`);
         outcomeText = `Player chose PAPER. Computer chose ROCK.
                        You win! PAPER beats ROCK.`;
         return outcomeText;
 
     } else if ( playerPlay == 'PAPER' && rivalPlay == 'SCISSORS' ) {
-        // console.log(`Player chose ${playerPlay}. Computer chose ${rivalPlay}.`);
         outcomeText = `Player chose PAPER. Computer chose SCISSORS.
                        You lose! SCISSORS beats PAPER.`;
         return outcomeText;
 
     } else if ( playerPlay == 'PAPER' && rivalPlay == 'PAPER' ) {
-        // console.log(`Player chose ${playerPlay}. Computer chose ${rivalPlay}.`);
         outcomeText = `Both players chose PAPER. It's a tie!`;
         return outcomeText;
 
     } else if ( playerPlay == 'SCISSORS' && rivalPlay == 'PAPER' ) {
-        // console.log(`Player chose ${playerPlay}. Computer chose ${rivalPlay}.`);
         outcomeText = `Player chose SCISSORS. Computer chose PAPER.
                        You win! SCISSORS beats PAPER.`;
         return outcomeText;
 
     } else if ( playerPlay == 'SCISSORS' && rivalPlay == 'ROCK' ) {
-        // console.log(`Player chose ${playerPlay}. Computer chose ${rivalPlay}.`);
         outcomeText = `Player chose SCISSORS. Computer chose ROCK.
                        You lose! ROCK beats SCISSORS.`;
         return outcomeText;
 
     } else if ( playerPlay == 'SCISSORS' && rivalPlay == 'SCISSORS' ) {
-        // console.log(`Player chose ${playerPlay}. Computer chose ${rivalPlay}.`);
         outcomeText = `Both players chose SCISSORS. It's a tie!`;
         return outcomeText;
     }
