@@ -1,4 +1,7 @@
 let buttons = document.querySelectorAll('button');
+let totalWins_p = 0;
+let totalWins_c = 0;
+let ties = 0;
 
 for (const button of buttons) {
     button.addEventListener('click', (e) => {
@@ -10,72 +13,98 @@ function displayResult(event) {
 
     let resultNode = document.querySelector('.result');
     let previousNode = document.querySelector('.result-one');
+    let playerParagraph = document.querySelector('#player-wins');
+    let computerParagraph = document.querySelector('#computer-wins');;
+    let tiesParagraph = document.querySelector('#ties-game');
 
     if ( resultNode.children.length > 0 ) {
         resultNode.removeChild(previousNode);
         let playerChoice = event.innerHTML.trim().toUpperCase();
-        let roundOutcome = playRound(playerChoice)
-        let resultText = document.createElement('p');
-        resultText.classList.add('result-one');
-        resultText.textContent = roundOutcome;
-        resultNode.appendChild(resultText);
-
+        let roundOutcome = createResultMessage(playerChoice, resultNode);
+        countWins(roundOutcome[1]);
+        playerParagraph.textContent = totalWins_p;
+        computerParagraph.textContent = totalWins_c;
+        tiesParagraph.textContent = ties;
     } else {
         let playerChoice = event.innerHTML.trim().toUpperCase();
-        let roundOutcome = playRound(playerChoice)
-        let resultText = document.createElement('p');
-        resultText.classList.add('result-one');
-        resultText.textContent = roundOutcome;
-        resultNode.appendChild(resultText);
+        let roundOutcome = createResultMessage(playerChoice, resultNode);
+        countWins(roundOutcome[1]);
+        playerParagraph.textContent = totalWins_p;
+        computerParagraph.textContent = totalWins_c;
+        tiesParagraph.textContent = ties;
     }
 };
+
+function createResultMessage(choice, targetNode) {
+    let outcomeArray = playRound(choice)
+    let resultText = createResultP();
+    resultText.textContent = outcomeArray[0];
+    targetNode.appendChild(resultText);
+    return outcomeArray;
+}
+
+function createResultP() {
+    let result_p = document.createElement('p');
+    result_p.classList.add('result-one');
+    return result_p;
+}
+
+function countWins(winnerInfo) {
+    if ( winnerInfo == 'Player wins') {
+        totalWins_p += 1;
+    } else if ( winnerInfo == 'Computer wins') {
+        totalWins_c += 1;
+    } else {
+        ties += 1;
+    }
+}
 
 function playRound(playerPlay) {
 
     let rivalPlay = getComputerChoice();
-    let outcomeText;
+    let outcome = [];
 
     if ( playerPlay == 'ROCK' && rivalPlay == 'SCISSORS' ) {
-        outcomeText = `Player chose ROCK. Computer chose SCISSORS.
-                       You win! ROCK beats SCISSORS.`;
-        return outcomeText;
+        outcome = [`Player chose ROCK. Computer chose SCISSORS.
+                       You win! ROCK beats SCISSORS.`, 'Player wins'];
+        return outcome;
 
     } else if ( playerPlay == 'ROCK' && rivalPlay == 'PAPER' ) {
-        outcomeText = `Player chose ROCK. Computer chose PAPER.
-                       You lose! PAPER beats ROCK.`;
-        return outcomeText;
+        outcome = [`Player chose ROCK. Computer chose PAPER.
+                       You lose! PAPER beats ROCK.`, 'Computer wins'];
+        return outcome;
 
     } else if ( playerPlay == 'ROCK' && rivalPlay == 'ROCK' ) {
-        outcomeText = `Both players chose ROCK. It's a tie!`;
-        return outcomeText;
+        outcome = [`Both players chose ROCK. It's a tie!`, 'Tie'];
+        return outcome;
 
     } else if ( playerPlay == 'PAPER' && rivalPlay == 'ROCK' ) {
-        outcomeText = `Player chose PAPER. Computer chose ROCK.
-                       You win! PAPER beats ROCK.`;
-        return outcomeText;
+        outcome = [`Player chose PAPER. Computer chose ROCK.
+                       You win! PAPER beats ROCK.`, 'Player wins'];
+        return outcome;
 
     } else if ( playerPlay == 'PAPER' && rivalPlay == 'SCISSORS' ) {
-        outcomeText = `Player chose PAPER. Computer chose SCISSORS.
-                       You lose! SCISSORS beats PAPER.`;
-        return outcomeText;
+        outcome = [`Player chose PAPER. Computer chose SCISSORS.
+                       You lose! SCISSORS beats PAPER.`, 'Computer wins'];
+        return outcome;
 
     } else if ( playerPlay == 'PAPER' && rivalPlay == 'PAPER' ) {
-        outcomeText = `Both players chose PAPER. It's a tie!`;
-        return outcomeText;
+        outcome = [`Both players chose PAPER. It's a tie!`, 'Tie'];
+        return outcome;
 
     } else if ( playerPlay == 'SCISSORS' && rivalPlay == 'PAPER' ) {
-        outcomeText = `Player chose SCISSORS. Computer chose PAPER.
-                       You win! SCISSORS beats PAPER.`;
-        return outcomeText;
+        outcome = [`Player chose SCISSORS. Computer chose PAPER.
+                       You win! SCISSORS beats PAPER.`, 'Player wins'];
+        return outcome;
 
     } else if ( playerPlay == 'SCISSORS' && rivalPlay == 'ROCK' ) {
-        outcomeText = `Player chose SCISSORS. Computer chose ROCK.
-                       You lose! ROCK beats SCISSORS.`;
-        return outcomeText;
+        outcome = [`Player chose SCISSORS. Computer chose ROCK.
+                       You lose! ROCK beats SCISSORS.`, 'Computer wins'];
+        return outcome;
 
     } else if ( playerPlay == 'SCISSORS' && rivalPlay == 'SCISSORS' ) {
-        outcomeText = `Both players chose SCISSORS. It's a tie!`;
-        return outcomeText;
+        outcome = [`Both players chose SCISSORS. It's a tie!`, 'Tie'];
+        return outcome;
     }
 };
 
