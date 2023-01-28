@@ -6,7 +6,32 @@ let ties = 0;
 for (const button of buttons) {
     button.addEventListener('click', (e) => {
         displayResult(e.target);
+        let winMessage = victoryMessage();
+        if ( winMessage ) {
+            let lastresult = document.querySelector('.result-one');
+            lastresult.textContent = winMessage;
+            totalWins_p = 0;
+            totalWins_c = 0;
+            ties = 0;
+        }
     });
+}
+
+function victoryMessage() {
+    let endgameMessage = '';
+    if ( totalWins_p == 5 ) {
+        endgameMessage = `Congratulations, you won the game!
+                          To start a new series, choose Rock,
+                          Paper, or Scissors.`;
+        return endgameMessage;
+    } else if ( totalWins_c == 5 ) {
+        endgameMessage = `Oh no, you lost the game!
+                          To start a new series, choose Rock,
+                          Paper, or Scissors.`;
+        return endgameMessage;
+    } else {
+        endgameMessage = '';
+    }
 }
 
 function displayResult(event) {
@@ -123,6 +148,8 @@ function getComputerChoice() {
 };
 
 //--------------------------------------Automated 5 round RPS Game---------------
+
+// Must be refactored!!
 
 // function game(gameRound) {
 
