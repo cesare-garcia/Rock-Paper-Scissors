@@ -2,6 +2,7 @@ body {
     background-color: black;
     font-family: sans-serif;
     height: 100vh;
+    margin: 0;
 }
 
 .body-container {
@@ -43,7 +44,6 @@ img {
     justify-content: center;
     align-items: center;
     height: 200px;
-    width: 100vh;
 }
 
 .instruction {
@@ -52,7 +52,7 @@ img {
 
 .result-container {
     display: flex;
-    gap: 400px;
+    justify-content: space-between;
     height: 134px;
     max-height: 134px;
     width: inherit;
@@ -69,6 +69,11 @@ img {
 .series-results {
     height: 134px;
     max-height: 134px;
+    width: 500px;
+}
+
+.result-one {
+    text-align: left;
 }
 
 p {
