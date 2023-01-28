@@ -5,10 +5,15 @@ body {
     margin: 0;
 }
 
+.series-count {
+    color: white;
+    width: 450px;
+}
+
 .body-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 100vh;
 }
 
@@ -70,6 +75,20 @@ img {
     height: 134px;
     max-height: 134px;
     width: 500px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.series-containers {
+    display: flex;
+    height: 60px;
+}
+
+#player-wins,
+#computer-wins,
+#ties-game {
+    width: 50px;
 }
 
 .result-one {
@@ -90,6 +109,7 @@ p {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding-bottom: 75px;
 }
 
 button {
