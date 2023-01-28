@@ -8,6 +8,7 @@ body {
 .series-count {
     color: white;
     width: 450px;
+    align-self: center;
 }
 
 .body-container {
@@ -89,6 +90,7 @@ img {
 #computer-wins,
 #ties-game {
     width: 50px;
+    align-self: center;
 }
 
 .result-one {
