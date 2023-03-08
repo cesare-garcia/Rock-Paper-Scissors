@@ -1,128 +1,128 @@
 body {
-    background-color: black;
-    font-family: sans-serif;
-    height: 100vh;
-    margin: 0;
+  background-color: black;
+  font-family: sans-serif;
+  height: 100vh;
+  margin: 0;
 }
 
 .series-count {
-    color: white;
-    width: 450px;
-    align-self: center;
+  color: white;
+  width: 450px;
+  align-self: center;
 }
 
 .body-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .title-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
-    color: white;
-    font-weight: 800;
+  color: white;
+  font-weight: 800;
 }
 
 .img-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 img {
-    border: solid;
-    border-width: 5px;
-    border-radius: 3px;
-    border-color: brown;
-    height: 300px;
-    width: auto;
+  border: solid;
+  border-width: 5px;
+  border-radius: 3px;
+  border-color: brown;
+  height: 300px;
+  width: auto;
 }
 
 .game-instruction-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  flex-shrink: 0;
 }
 
 .instruction {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .result-container {
-    display: flex;
-    justify-content: space-between;
-    height: 134px;
-    max-height: 134px;
-    width: inherit;
+  display: flex;
+  justify-content: space-between;
+  height: 134px;
+  max-height: 134px;
+  width: inherit;
 }
 
 .result {
-    height: 134px;
-    max-height: 134px;
-    width: 500px;
-    display: flex;
-    align-items: center;
+  height: 134px;
+  max-height: 134px;
+  width: 500px;
+  display: flex;
+  align-items: center;
 }
 
 .series-results {
-    height: 134px;
-    max-height: 134px;
-    width: 500px;
-    padding-left: 60px;
-    display: flex;
-    flex-direction: column;
+  height: 134px;
+  max-height: 134px;
+  width: 500px;
+  padding-left: 60px;
+  display: flex;
+  flex-direction: column;
 }
 
 .series-containers {
-    display: flex;
-    height: 60px;
+  display: flex;
+  height: 60px;
 }
 
 #player-wins,
 #computer-wins,
 #ties-game {
-    width: 50px;
-    align-self: center;
+  width: 50px;
+  align-self: center;
 }
 
 .result-one {
-    text-align: left;
+  text-align: left;
 }
 
 p {
-    width: 500px;
-    font-size: 30px;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    margin: 0;
-    margin-right: 0;
+  width: 500px;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  margin-right: 0;
 }
 
 .buttons-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-bottom: 75px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 75px;
 }
 
 button {
-    color: white;
-    background-color: darkgrey;
-    border: solid;
-    border-color: brown;
-    border-radius: 5px;
-    border-width: 5px;
-    height: 100px;
-    width: 200px;
-    font-size: 36px;
+  color: white;
+  background-color: darkgrey;
+  border: solid;
+  border-color: brown;
+  border-radius: 5px;
+  border-width: 5px;
+  height: 100px;
+  width: 200px;
+  font-size: 36px;
 }
